@@ -82,3 +82,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.shadow-box {
+  border-radius: 20px;
+  box-shadow: 15px 15px 0px 0px black;
+}
+
+.nav-is-sticky {
+  background: rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(20px);
+}

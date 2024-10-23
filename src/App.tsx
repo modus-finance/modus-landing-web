@@ -1,11 +1,39 @@
+import { useState, useEffect } from "react";
 import "./App.css";
 import Typewriter from "typewriter-effect";
+import classNames from "classnames";
 
 function App() {
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const nav = document.querySelector("nav");
+      if (nav && nav.getBoundingClientRect().top <= 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {/* Nav */}
-      <nav className="flex h-20 w-screen items-center justify-between px-4 py-4 xl:px-20 xl:py-[26px]">
+      <nav
+        className={classNames(
+          "sticky top-0 z-50 flex h-20 w-screen items-center justify-between bg-white px-4 py-4 xl:px-20 xl:py-[26px]",
+          {
+            "nav-is-sticky": isSticky,
+          },
+        )}
+      >
         {/* Modus Logo */}
         <div className="flex items-center gap-x-2">
           <img src="./modus-logo.svg" className="h-7 w-7" alt="" />
@@ -13,17 +41,18 @@ function App() {
         </div>
         {/* Nav item */}
         <div className="items-center hidden text-base font-semibold gap-x-6 sm:flex sm:text-sm">
+          <div>Home</div>
           <a
-            href="https://docs.modus.finance/"
+            href="https://docs.modus.finance"
             target="_blank"
-            className="font-semibold text-black sm:text-sm"
+            className="font-medium text-[#626262] sm:text-sm"
           >
             <div>Docs</div>
           </a>
           <a
             href="https://x.com/Modus_Finance"
             target="_blank"
-            className="font-semibold text-black sm:text-sm"
+            className="font-medium text-[#626262] sm:text-sm"
           >
             <div>Community</div>
           </a>
@@ -31,12 +60,12 @@ function App() {
           <div>Borrow / Lend</div>
           <div>Borrow / Lend</div> */}
         </div>
-        {/* <button className="h-10 rounded-[40px] bg-black px-6 py-0 font-medium text-white">
+        <button className="invisible h-10 rounded-[40px] bg-black px-6 py-0 font-medium text-white">
           Launch APP
-        </button> */}
+        </button>
       </nav>
       {/* main-1 */}
-      <main className="flex w-screen flex-col items-center justify-center bg-[#60CDFF] px-4 py-8 xl:py-[73px]">
+      <main className="flex w-screen flex-col items-center justify-center bg-[#60CDFF] px-4 py-8 xl:py-[106px]">
         <div className="text-nowrap text-[28px] font-bold leading-[32px] text-black md:text-6xl xl:text-[72px] xl:leading-[88px]">
           Unlock capital efficiency
         </div>
@@ -75,10 +104,10 @@ function App() {
         <div className="mt-3 text-base font-medium text-black xl:text-2xl">
           On Monad’s first modular lending stack
         </div>
-        <button className="mt-6 flex h-10 w-full items-center justify-center rounded-[40px] bg-black px-6 py-0 font-medium text-white sm:mt-[68px] sm:w-auto">
+        <button className="mt-6 flex h-10 w-full transform appearance-none items-center justify-center rounded-[40px] bg-black px-6 py-0 font-medium text-white outline-none transition-transform duration-300 hover:scale-[1.2] hover:border-transparent hover:outline-none focus:outline-none sm:mt-[68px] sm:w-auto">
           <img src="./x-logo.svg" className="h-9 w-9" alt="" />
         </button>
-        <div className="mt-3 text-sm font-medium text-black md:text-base xl:text-2xl">
+        <div className="mt-3 text-base font-medium text-black md:text-base xl:text-base">
           Notifications on to avoid FOMO
         </div>
       </main>
@@ -103,7 +132,7 @@ function App() {
             </button>
           </div> */}
         </div>
-        <div className="relative mt-8 flex flex-col items-center justify-center rounded-[20px] border-2 border-black bg-white px-[46px] py-8 xl:ml-6 xl:mr-0 xl:px-[56px] xl:py-[44px] 2xl:ml-[190px] 2xl:mt-0">
+        <div className="shadow-box relative mt-8 flex flex-col items-center justify-center rounded-[20px] border-2 border-black bg-white px-[46px] py-8 xl:ml-6 xl:mr-0 xl:px-[56px] 2xl:ml-[190px] 2xl:mt-0">
           <div className="z-10 text-base font-medium leading-[14px] text-[#000000a6] xl:text-[18px]">
             Monad LST market
           </div>
@@ -115,11 +144,14 @@ function App() {
             className="z-10 mt-5 h-[44px] 2xl:mt-8 2xl:h-[68px]"
             alt=""
           />
-          <img
+          <button className="mt-4 flex h-10 w-full items-center justify-center rounded-[40px] border-2 border-black text-[18px] font-medium hover:border-black hover:outline-none focus:border-black focus:outline-none md:w-full xl:mt-6 xl:border-2">
+            Borrow
+          </button>
+          {/* <img
             src="./ltv-border-shadow.svg"
             className="absolute -top-[2px] left-[4px] z-[-1] w-[102%] max-w-[none] lg:top-[4px] xl:left-[2px] xl:w-[104%] 2xl:-top-[2px]"
             alt="border-shadow"
-          />
+          /> */}
         </div>
       </main>
       {/* main-3 */}
@@ -204,13 +236,16 @@ function App() {
                 target="_blank"
                 className="cursor-pointer"
               >
-                <img
-                  src="./x-white.svg"
-                  className="cursor-pointer h-9 w-9"
-                  alt=""
-                />
+                <img src="./x-white.svg" className="h-9 w-9" alt="" />
               </a>
               <img src="./discord-white.svg" className="h-9 w-9" alt="" />
+              <a
+                href="https://docs.modus.finance"
+                target="_blank"
+                className="cursor-pointer"
+              >
+                <img src="./gitbook-white.svg" className="h-9 w-9" alt="" />
+              </a>
             </div>
           </div>
         </div>
