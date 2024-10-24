@@ -163,11 +163,14 @@ function App() {
           backgroundColor: "#012993",
         }}
       >
-        <img
-          src="./strategies-left.svg"
-          className="mt-8 w-[80%] max-w-none xl:mt-0 xl:max-w-[680px] 2xl:w-full"
-          alt=""
-        />
+        <div className="relative mt-8 flex w-[100%] max-w-none items-center justify-center xl:mt-0 xl:max-w-[680px] 2xl:w-full">
+          <img src="./strategies-left-2.svg" className="z-10 w-full" alt="" />
+          <img
+            src="./strategies-left-shadow.svg"
+            className="absolute -left-[20px] -top-[45px] z-0 w-[120%] max-w-none"
+            alt=""
+          />
+        </div>
         <div className="mb-8 mt-12 flex w-auto flex-col items-center justify-center text-center sm:text-center md:mb-16 xl:-mt-20 xl:mb-0 2xl:w-[437px]">
           <div className="text-2xl font-bold text-white md:text-5xl xl:font-semibold">
             Auto-strategies
