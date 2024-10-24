@@ -104,9 +104,11 @@ function App() {
         <div className="mt-3 text-base font-medium text-black xl:text-2xl">
           On Monad’s first modular lending stack
         </div>
-        <button className="mt-6 flex h-10 w-full transform appearance-none items-center justify-center rounded-[40px] bg-black px-6 py-0 font-medium text-white outline-none transition-transform duration-300 hover:scale-[1.2] hover:border-transparent hover:outline-none focus:outline-none sm:mt-[68px] sm:w-auto">
-          <img src="./x-logo.svg" className="h-9 w-9" alt="" />
-        </button>
+        <a href="https://x.com/Modus_Finance" target="_blank">
+          <button className="mt-6 flex h-10 w-full transform appearance-none items-center justify-center rounded-[40px] bg-black px-6 py-0 font-medium text-white outline-none transition-transform duration-300 hover:scale-[1.2] hover:border-transparent hover:outline-none focus:outline-none sm:mt-[68px] sm:w-auto">
+            <img src="./x-logo.svg" className="h-9 w-9" alt="" />
+          </button>
+        </a>
         <div className="mt-3 text-base font-medium text-black md:text-base xl:text-base">
           Notifications on to avoid FOMO
         </div>
@@ -144,7 +146,7 @@ function App() {
             className="z-10 mt-5 h-[44px] 2xl:mt-8 2xl:h-[68px]"
             alt=""
           />
-          <button className="mt-4 flex h-10 w-full items-center justify-center rounded-[40px] border-2 border-black text-[18px] font-medium hover:border-black hover:outline-none focus:border-black focus:outline-none md:w-full xl:mt-6 xl:border-2">
+          <button className="mt-4 flex h-10 w-full cursor-default items-center justify-center rounded-[40px] border-2 border-black text-[18px] font-medium hover:border-black hover:outline-none focus:border-black focus:outline-none md:w-full xl:mt-6 xl:border-2">
             Borrow
           </button>
           {/* <img
@@ -226,7 +228,7 @@ function App() {
                 color: "rgba(0, 0, 0, 0.68)",
               }}
             >
-              Unlock your assets
+              Unlock your assets on Monad's modular lending stack
             </div>
           </div>
           <div className="mt-4">
@@ -241,7 +243,7 @@ function App() {
               >
                 <img src="./x-white.svg" className="h-9 w-9" alt="" />
               </a>
-              <img src="./discord-white.svg" className="h-9 w-9" alt="" />
+              {/* <img src="./discord-white.svg" className="h-9 w-9" alt="" /> */}
               <a
                 href="https://docs.modus.finance"
                 target="_blank"
