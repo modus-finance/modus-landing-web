@@ -40,7 +40,7 @@ function App() {
           <div className="text-2xl font-bold">Modus</div>
         </div>
         {/* Nav item */}
-        <div className="items-center hidden text-base font-semibold gap-x-6 sm:flex sm:text-sm">
+        <div className="hidden items-center gap-x-6 text-base font-semibold sm:flex sm:text-sm">
           <div>Home</div>
           <a
             href="https://docs.modus.finance"
@@ -121,7 +121,7 @@ function App() {
         }}
       >
         <div className="flex w-auto flex-col items-center justify-center xl:w-[410px]">
-          <div className="text-2xl font-bold text-center sm:text-left sm:text-5xl sm:font-semibold">
+          <div className="text-center text-2xl font-bold sm:text-left sm:text-5xl sm:font-semibold">
             High LTV lending markets
           </div>
           <div className="text-center text-base font-medium sm:mt-2 sm:text-left sm:text-[18px] sm:leading-[28px] md:mt-6 xl:mt-12">
@@ -157,7 +157,7 @@ function App() {
         </div>
       </main>
       {/* main-3 */}
-      <main
+      {/* <main
         className="flex w-screen flex-col-reverse items-center justify-center overflow-x-hidden bg-no-repeat px-4 sm:flex-col sm:px-[120px] lg:py-[120px] xl:flex-row xl:gap-x-[118px]"
         style={{
           background: "url(./strategies-bg.png)",
@@ -182,9 +182,9 @@ function App() {
             LTV markets.
           </div>
         </div>
-      </main>
+      </main> */}
       {/* main-4 */}
-      <main className="flex w-screen items-center justify-center bg-white px-4 py-6 xl:px-[88px] xl:py-[120px]">
+      {/* <main className="flex w-screen items-center justify-center bg-white px-4 py-6 xl:px-[88px] xl:py-[120px]">
         <div
           className="flex w-full flex-col items-center rounded-[20px] bg-center bg-no-repeat px-[32px] py-[40px]"
           style={{
@@ -207,7 +207,7 @@ function App() {
             alt=""
           />
         </div>
-      </main>
+      </main> */}
       {/* footer */}
       <footer className="bg-[#EEF0F2] px-4 py-6 md:px-[80px] md:pb-[6px] md:pt-[106px] xl:px-[120px] xl:pt-[108px]">
         <div className="flex flex-col items-start pb-10 text-center sm:flex-row sm:items-center sm:justify-between xl:pb-[120px]">
@@ -215,7 +215,7 @@ function App() {
             <div className="flex items-center">
               <img
                 src="./modus-logo.svg"
-                className="w-6 h-6 sm:h-12 sm:w-12"
+                className="h-6 w-6 sm:h-12 sm:w-12"
                 alt=""
               />
               <div className="ml-1 text-2xl font-medium text-black sm:ml-3 sm:text-[42px]">
@@ -223,7 +223,7 @@ function App() {
               </div>
             </div>
             <div
-              className="mt-2 text-sm font-normal text-left sm:mt-6 sm:text-base"
+              className="mt-2 text-left text-sm font-normal sm:mt-6 sm:text-base"
               style={{
                 color: "rgba(0, 0, 0, 0.68)",
               }}
@@ -235,7 +235,7 @@ function App() {
             <div className="text-base font-semibold sm:text-[18px] sm:leading-[26px]">
               Follow us
             </div>
-            <div className="flex items-center gap-4 mt-4">
+            <div className="mt-4 flex items-center gap-4">
               <a
                 href="https://x.com/Modus_Finance"
                 target="_blank"
@@ -256,7 +256,7 @@ function App() {
         </div>
         <div className="h-[1px] w-full bg-[#D2D2D7]" />
         <div
-          className="pb-0 mt-3 text-sm font-normal text-center sm:mt-8 sm:pb-6"
+          className="mt-3 pb-0 text-center text-sm font-normal sm:mt-8 sm:pb-6"
           style={{
             color: "rgba(91, 96, 118, 0.80)",
           }}
